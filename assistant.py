@@ -25,12 +25,12 @@ def generate_response(prompt, previous_resp):
             {"role": "user", "content": prompt}
         ],
         temperature=0.5,
-        max_tokens=20,
+        max_tokens=500,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0,
-        n=1,
-        stop=["\n"],
+        n=2,
+        stop=None,
     )
 
     return response["choices"][0]["message"]["content"]
@@ -70,7 +70,7 @@ def main():
                                 response = generate_response(text, previous_response)
                                 print(f'Jarvis says:  \"{response}\"')
                                 speak_text(response)
-                                previous_response = text
+                                previous_response = response
 
             except Exception as err:
                 print(f"An error occurred {err}")
