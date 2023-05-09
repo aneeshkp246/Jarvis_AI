@@ -14,6 +14,10 @@ Clone this repository by running the command below in the terminal:
 ```
 git clone https://github.com/aneeshkp246/Jarvis_AI.git
 ```
+Install all the requirements:
+```
+pip install -r requirements.txt
+```
 Then change the directory
 
 ```
